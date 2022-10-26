@@ -10,7 +10,9 @@ logger.level = 'debug';
 
 try {
   app.get('/', (req, res) => {
+    res.status(200)
     res.json({ server_status: 'up' });
+    logger.debug('Received a initial request')
   });
 
   app.listen(port, () => {
