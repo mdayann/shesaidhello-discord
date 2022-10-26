@@ -1,20 +1,23 @@
-const { Client, GatewayIntentBits, ActivityType } = require('discord.js');
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 require('dotenv').config();
+const express = require('express');
+const app = express();
+const port = process.env.SERVER_PORT;
+const log4js = require('log4js');
+const discord = require('./discord');
 
+const logger = log4js.getLogger();
+logger.level = 'debug';
 
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setActivity('Pentil', { type: ActivityType.Streaming });
-});
+try {
+  app.get('/', (req, res) => {
+    res.json({ server_status: 'up' });
+  });
 
-client.on('interactionCreate', async interaction => {
-  if (!interaction.isChatInputCommand()) return;
+  app.listen(port, () => {
+    logger.debug(`Server started on port ${port}`);
+  });
 
-  if (interaction.commandName === 'jokopentil') {
-    const pdip = client.emojis.cache.find(emoji => emoji.name === "pdip");
-    await interaction.reply(`PENTILLLLL!!! ${pdip} ${pdip} ${pdip} LMAO`)
-  }
-});
-
-client.login(process.env.TOKEN);
+  discord();
+} catch (error) {
+  logger.error(`Error Happened : ${error}`);
+}
