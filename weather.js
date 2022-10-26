@@ -22,7 +22,7 @@ async function mainWeather() {
 
         const weatherMessage = `Ramalan cuaca Yogyakarta hari ini : \nPagi : ${morningStatus} ${morningDegree}°C \nSiang : ${eveningStatus} ${eveningDegree}°C \nPagi : ${nightStatus} ${nightDegree}°C`
 
-        console.log(weatherMessage)
+        logger.debug(weatherMessage)
         return weatherMessage
     } else {
         logger.error(`Error Happened : ${error}`);
