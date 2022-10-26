@@ -31,7 +31,7 @@ function mainDiscord() {
       client.user.setActivity('Pentil', { type: ActivityType.Streaming });
 
 
-      let scheduledMessage = new cron.CronJob('0 0 6 * * *', async () => {
+      let scheduledMessage = new cron.CronJob('0 0 13 * * *', async () => {
            const guild = client.guilds.cache.get('312965119250399234');
            const channel = guild.channels.cache.get('312965119250399234');
 
