@@ -23,11 +23,11 @@ async function mainWeather() {
         const moment = require('moment-timezone');
         const currentDate = moment().tz("Asia/Jakarta").format('DD/MM/YYYY');
 
-        const weatherMessage = `Sugeng enjing 🙏, Ramalam cuaca sakmeniko ${currentDate} :
+        const weatherMessage = `Sugeng enjing 🙏, Ramalam cuaca Yogyakarta sakmeniko ${currentDate} :
         \nEnjing : ${morningStatus} ${morningDegree}°C
         \nAwan : ${eveningStatus} ${eveningDegree}°C
         \nNdalu : ${nightStatus} ${nightDegree}°C
-        \n\nKudu semangat masio gak ono sing nyemangati.(>‿◠)✌`
+        \n\nKudu semangat masio gak ono sing nyemangati. (>‿◠)✌`
 
         logger.debug(weatherMessage)
         return weatherMessage
