@@ -20,7 +20,14 @@ async function mainWeather() {
         let eveningDegree = parseFloat((json[6].Temperature.Value - 32) / 1.8).toFixed(1)
         let nightDegree = parseFloat((json[11].Temperature.Value - 32) / 1.8).toFixed(1)
 
-        const weatherMessage = `Ramalan cuaca Yogyakarta hari ini : \nPagi : ${morningStatus} ${morningDegree}°C \nSiang : ${eveningStatus} ${eveningDegree}°C \nPagi : ${nightStatus} ${nightDegree}°C`
+        const moment = require('moment-timezone');
+        const currentDate = moment().tz("Asia/Jakarta").format('DD/MM/YYYY');
+
+        const weatherMessage = `Sugeng enjing 🙏, Ramalam cuaca Yogyakarta sakmeniko ${currentDate} :
+        \nEnjing : ${morningStatus} ${morningDegree}°C
+        \nAwan : ${eveningStatus} ${eveningDegree}°C
+        \nNdalu : ${nightStatus} ${nightDegree}°C
+        \n\nKudu semangat masio gak ono sing nyemangati. (>‿◠)✌`
 
         logger.debug(weatherMessage)
         return weatherMessage
