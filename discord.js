@@ -22,7 +22,7 @@ const log4js = require('log4js');
 const logger = log4js.getLogger();
 logger.level = 'debug';
 
-function mainDiscord() {
+async function mainDiscord() {
   try {
     client.login(process.env.DISCORD_TOKEN);
 
@@ -31,7 +31,7 @@ function mainDiscord() {
       client.user.setActivity('Pentil', { type: ActivityType.Streaming });
 
 
-      let scheduledMessage = new cron.CronJob('0 0 13 * * *', async () => {
+      let scheduledMessage = new cron.CronJob('0 0 23 * * *', async () => {
            const guild = client.guilds.cache.get('312965119250399234');
            const channel = guild.channels.cache.get('312965119250399234');
 
