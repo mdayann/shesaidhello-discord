@@ -19,7 +19,7 @@ try {
     logger.debug(`Server started on port ${port}`);
   });
 
-  await discord();
+  discord();
 } catch (error) {
   logger.error(`Error Happened : ${error}`);
 }
