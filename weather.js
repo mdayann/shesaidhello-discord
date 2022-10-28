@@ -25,9 +25,9 @@ async function mainWeather() {
 
         const weatherMessage = `Sugeng enjing 🙏, Ramalam cuaca Yogyakarta sakmeniko ${currentDate} :
         \nEnjing : ${morningStatus} ${morningDegree}°C
-        \nAwan : ${eveningStatus} ${eveningDegree}°C
-        \nNdalu : ${nightStatus} ${nightDegree}°C
-        \n\nKudu semangat masio gak ono sing nyemangati. (>‿◠)✌`
+        Awan : ${eveningStatus} ${eveningDegree}°C
+        Ndalu : ${nightStatus} ${nightDegree}°C
+        \nKudu semangat masio gak ono sing nyemangati. (>‿◠)✌`
 
         logger.debug(weatherMessage)
         return weatherMessage
