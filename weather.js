@@ -24,9 +24,7 @@ async function mainWeather() {
         const currentDate = moment().tz("Asia/Jakarta").format('DD/MM/YYYY');
 
         const weatherMessage = `Sugeng enjing 🙏, Ramalam cuaca Yogyakarta sakmeniko ${currentDate} :
-        \nEnjing : ${morningStatus} ${morningDegree}°C
-        Awan : ${eveningStatus} ${eveningDegree}°C
-        Ndalu : ${nightStatus} ${nightDegree}°C
+        \nEnjing : ${morningStatus} ${morningDegree}°C\nAwan : ${eveningStatus} ${eveningDegree}°C\nNdalu : ${nightStatus} ${nightDegree}°C
         \nKudu semangat masio gak ono sing nyemangati. (>‿◠)✌`
 
         logger.debug(weatherMessage)
